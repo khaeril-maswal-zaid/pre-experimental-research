@@ -3,7 +3,11 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import NavbarComp from "../Components/NavbarComp";
 
+import { useData } from "../context/DataContext"; // Import Context
+
 const Home = () => {
+  const { setData } = useData(); // Akses Context
+
   const [numRows, setNumRows] = useState(0);
   const [rowsLeft, setRowsLeft] = useState([]);
   const [rowsRight, setRowsRight] = useState([]);
@@ -25,6 +29,9 @@ const Home = () => {
       }));
       setRowsLeft(newRowsLeft);
       setRowsRight(newRowsRight);
+
+      // Simpan ke Context
+      setData({ rowsLeft: newRowsLeft, rowsRight: newRowsRight });
     }
   };
 

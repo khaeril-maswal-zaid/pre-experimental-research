@@ -1,5 +1,6 @@
 import NavbarComp from "../Components/NavbarComp";
 import JumbotronComp from "../Components/JumbotronComp";
+import CollactionD from "../Components/CollactionD";
 
 import { Tabs } from "flowbite-react";
 import { HiAdjustments, HiClipboardList, HiUserCircle } from "react-icons/hi";
@@ -16,14 +17,15 @@ const DataCollaction = () => {
         variant="underline"
         className="container mx-auto"
       >
-        <Tabs.Item active title="Profile" icon={HiUserCircle}>
-          This is
-          <span className="font-medium text-gray-800 dark:text-white">
-            Profile tab's associated content
-          </span>
-          . Clicking another tab will toggle the visibility of this one for the
-          next. The tab JavaScript swaps classes to control the content
-          visibility and styling.
+        <Tabs.Item active title="Classif. Pre Test" icon={HiUserCircle}>
+          <CollactionD />
+        </Tabs.Item>
+        <Tabs.Item active title="Classif. Post Test" icon={HiUserCircle}>
+          <CollactionD />
+        </Tabs.Item>
+
+        <Tabs.Item active title="Gain" icon={HiUserCircle}>
+          <CollactionD />
         </Tabs.Item>
 
         <Tabs.Item title="Dashboard" icon={MdDashboard}>

@@ -11,14 +11,14 @@ import {
 const NavbarComp = () => {
   return (
     <Navbar fluid rounded className="container mx-auto mt-3">
-      <NavbarBrand href="https://flowbite-react.com">
+      <NavbarBrand href="/">
         <img
           src="https://flowbite.com/docs/images/logo.svg"
           className="h-8"
           alt="Flowbite Logo"
         />
         <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
-          Flowbite React
+          Webcrafters Research
         </span>
       </NavbarBrand>
       <NavbarToggle />
