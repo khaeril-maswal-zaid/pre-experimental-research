@@ -2,9 +2,9 @@ import React from "react";
 import { MathJax, MathJaxContext } from "better-react-mathjax";
 import { useData } from "../context/DataContext";
 
-const PercenatgePreComp = () => {
+const PercenatgePostComp = () => {
   const { data } = useData();
-  const { rowsLeft } = data;
+  const { rowsRight } = data;
 
   // Fungsi untuk menghitung jumlah kategori
   const calculateFrequencies = () => {
@@ -16,7 +16,7 @@ const PercenatgePreComp = () => {
       less: 0,
     };
 
-    rowsLeft.forEach((row) => {
+    rowsRight.forEach((row) => {
       const score = parseInt(row.score, 10);
       if (score >= 91 && score <= 100) frequencies.veryGood++;
       else if (score >= 74 && score <= 90) frequencies.good++;
@@ -29,7 +29,7 @@ const PercenatgePreComp = () => {
   };
 
   const frequencies = calculateFrequencies();
-  const totalSamples = rowsLeft.length;
+  const totalSamples = rowsRight.length;
 
   // Fungsi untuk menghitung persentase
   const calculatePercentage = (frequency) =>
@@ -95,4 +95,4 @@ const PercenatgePreComp = () => {
   );
 };
 
-export default PercenatgePreComp;
+export default PercenatgePostComp;

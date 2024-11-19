@@ -54,14 +54,16 @@ const ClassifPreTableComp = () => {
         <Table.Body className="divide-y">
           {rowsCombined.map((row) => (
             <Table.Row key={row.id} className="bg-white dark:bg-gray-800">
-              <Table.Cell className="border text-center">{row.id}</Table.Cell>
-              <Table.Cell className="border text-center">
+              <Table.Cell className="py-1 border text-center">
+                {row.id}
+              </Table.Cell>
+              <Table.Cell className="py-1 border text-center">
                 {row.sample}
               </Table.Cell>
-              <Table.Cell className="border text-center">
+              <Table.Cell className="py-1 border text-center">
                 {row.preTest}
               </Table.Cell>
-              <Table.Cell className="border text-center">
+              <Table.Cell className="py-1 border text-center">
                 {row.classification}
               </Table.Cell>
             </Table.Row>
@@ -69,20 +71,20 @@ const ClassifPreTableComp = () => {
 
           {/* Baris TOTAL */}
           <Table.Row className="bg-gray-100 dark:bg-gray-700 font-bold">
-            <Table.Cell colSpan={2} className="border text-center">
+            <Table.Cell colSpan={2} className="py-2 border text-center">
               Score Total
             </Table.Cell>
-            <Table.Cell colSpan={2} className="border text-center">
+            <Table.Cell colSpan={2} className="py-2 border text-center">
               {totals.preTest}
             </Table.Cell>
           </Table.Row>
 
           {/* Baris AVERAGE */}
           <Table.Row className="bg-gray-200 dark:bg-gray-800 font-bold">
-            <Table.Cell colSpan={2} className="border text-center">
+            <Table.Cell colSpan={2} className="py-2 border text-center">
               Score Average
             </Table.Cell>
-            <Table.Cell colSpan={2} className="border text-center">
+            <Table.Cell colSpan={2} className="py-2 border text-center">
               {averages.preTest}
             </Table.Cell>
           </Table.Row>

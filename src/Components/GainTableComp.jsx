@@ -62,35 +62,63 @@ const CollactionD = () => {
         <Table.Body className="divide-y">
           {rowsCombined.map((row) => (
             <Table.Row key={row.id} className="bg-white dark:bg-gray-800">
-              <Table.Cell>{row.id}</Table.Cell>
-              <Table.Cell>{row.sample}</Table.Cell>
-              <Table.Cell>{row.preTest}</Table.Cell>
-              <Table.Cell>{row.postTest}</Table.Cell>
-              <Table.Cell>{row.D}</Table.Cell>
-              <Table.Cell>{row.D2}</Table.Cell>
+              <Table.Cell className="py-1 border text-center">
+                {row.id}
+              </Table.Cell>
+              <Table.Cell className="py-1 border text-center">
+                {row.sample}
+              </Table.Cell>
+              <Table.Cell className="py-1 border text-center">
+                {row.preTest}
+              </Table.Cell>
+              <Table.Cell className="py-1 border text-center">
+                {row.postTest}
+              </Table.Cell>
+              <Table.Cell className="py-1 border text-center">
+                {row.D}
+              </Table.Cell>
+              <Table.Cell className="py-1 border text-center">
+                {row.D2}
+              </Table.Cell>
             </Table.Row>
           ))}
 
           {/* Baris TOTAL */}
           <Table.Row className="bg-gray-100 dark:bg-gray-700 font-bold">
-            <Table.Cell colSpan={2} className="text-center">
+            <Table.Cell className="border py-2 text-center" colSpan={2}>
               Total
             </Table.Cell>
-            <Table.Cell>{totals.preTest}</Table.Cell>
-            <Table.Cell>{totals.postTest}</Table.Cell>
-            <Table.Cell>{totals.D}</Table.Cell>
-            <Table.Cell>{totals.D2}</Table.Cell>
+            <Table.Cell className="border py-2 text-center">
+              {totals.preTest}
+            </Table.Cell>
+            <Table.Cell className="border py-2 text-center">
+              {totals.postTest}
+            </Table.Cell>
+            <Table.Cell className="border py-2 text-center">
+              {totals.D}
+            </Table.Cell>
+            <Table.Cell className="border py-2 text-center">
+              {totals.D2}
+            </Table.Cell>
           </Table.Row>
 
           {/* Baris AVERAGE */}
           <Table.Row className="bg-gray-200 dark:bg-gray-800 font-bold">
-            <Table.Cell colSpan={2} className="text-center">
+            <Table.Cell className="border py-2 text-center" colSpan={2}>
               Average
             </Table.Cell>
-            <Table.Cell>{averages.preTest}</Table.Cell>
-            <Table.Cell>{averages.postTest}</Table.Cell>
-            <Table.Cell>{averages.D}</Table.Cell>
-            <Table.Cell>{averages.D2}</Table.Cell>
+            <Table.Cell className="border py-2 text-center">
+              {averages.preTest}
+            </Table.Cell>
+            <Table.Cell className="border py-2 text-center">
+              {averages.postTest}
+            </Table.Cell>
+            <Table.Cell className="border py-2 text-center">
+              {averages.D}
+            </Table.Cell>
+            <Table.Cell className="border py-2 text-center">
+              {averages.D2}
+            </Table.Cell>
           </Table.Row>
         </Table.Body>
       </Table>
