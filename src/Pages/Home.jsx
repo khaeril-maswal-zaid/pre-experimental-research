@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 ("use client");
-import { useNavigate } from "react-router-dom";
+
+import { useNavigate, Link } from "react-router-dom";
 import NavbarComp from "../Components/NavbarComp";
 
 import { useData } from "../context/DataContext"; // Import Context
@@ -196,12 +197,12 @@ const Home = () => {
       </section>
 
       <div className="container mx-auto mb-9 flex justify-center items-center">
-        <button
-          onClick={() => navigate("/data-analysis")}
+        <Link
+          to="/data-analysis"
           className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-gradient-to-r to-emerald-600 from-sky-400 hover:ring-2 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900"
         >
           Data Analysis
-        </button>
+        </Link>
       </div>
     </main>
   );

@@ -58,9 +58,6 @@ const CollactionD = () => {
           <Table.HeadCell>
             D<sup>2</sup> = (X<sub>1</sub> - X<sub>2</sub>)<sup>2</sup>
           </Table.HeadCell>
-          <Table.HeadCell>
-            <span className="sr-only">Edit</span>
-          </Table.HeadCell>
         </Table.Head>
         <Table.Body className="divide-y">
           {rowsCombined.map((row) => (
@@ -77,7 +74,7 @@ const CollactionD = () => {
           {/* Baris TOTAL */}
           <Table.Row className="bg-gray-100 dark:bg-gray-700 font-bold">
             <Table.Cell colSpan={2} className="text-center">
-              TOTAL
+              Total
             </Table.Cell>
             <Table.Cell>{totals.preTest}</Table.Cell>
             <Table.Cell>{totals.postTest}</Table.Cell>
@@ -88,7 +85,7 @@ const CollactionD = () => {
           {/* Baris AVERAGE */}
           <Table.Row className="bg-gray-200 dark:bg-gray-800 font-bold">
             <Table.Cell colSpan={2} className="text-center">
-              AVERAGE
+              Average
             </Table.Cell>
             <Table.Cell>{averages.preTest}</Table.Cell>
             <Table.Cell>{averages.postTest}</Table.Cell>
