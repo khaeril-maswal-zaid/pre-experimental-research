@@ -7,7 +7,8 @@ import ClassifPreTableComp from "../Components/ClassifPreTableComp";
 import ClassifPostTableComp from "../Components/ClassifPostTableComp";
 import PercentagePreComp from "../Components/PercentagePreComp";
 import PercentagePostComp from "../Components/PercentagePostComp";
-import MeanScorePreComp from "../Components/MeanScorePreComp";
+import MeanScoreComp from "../Components/MeanScoreComp";
+import DiffPercentageComp from "../Components/DiffPercentageComp";
 
 import { Tabs } from "flowbite-react";
 import { HiAdjustments, HiClipboardList, HiUserCircle } from "react-icons/hi";
@@ -50,18 +51,12 @@ const DataCollaction = () => {
           </Tabs.Item>
 
           <Tabs.Item title="Mean Score PreTest" icon={HiAdjustments}>
-            <MeanScorePreComp />
+            <MeanScoreComp />
           </Tabs.Item>
 
-          <Tabs.Item
-            title="Mean Score PostTest"
-            icon={HiAdjustments}
-          ></Tabs.Item>
-          <Tabs.Item title="Mean Score Gain" icon={HiClipboardList}></Tabs.Item>
-          <Tabs.Item
-            title="Diffrent of Percentage"
-            icon={HiClipboardList}
-          ></Tabs.Item>
+          <Tabs.Item title="Diffrent of Percentage" icon={HiClipboardList}>
+            <DiffPercentageComp/>
+          </Tabs.Item>
 
           <Tabs.Item
             title="Std. Deviation PreTest"
