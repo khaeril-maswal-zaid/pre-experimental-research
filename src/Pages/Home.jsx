@@ -64,7 +64,7 @@ const Home = () => {
         <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:pt-16">
           <h1 className="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl">
             <span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">
-              Data Collaction Pra Experimental
+              Data Collaction Pre Experimental
             </span>
             &nbsp;Research
           </h1>

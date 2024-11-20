@@ -1,46 +1,43 @@
+"use client";
+
 import { Table } from "flowbite-react";
 import { useData } from "../context/DataContext";
 
-const CollactionD = () => {
+const ClassificationTable = () => {
   const { data } = useData();
   const { rowsRight } = data;
 
-  // Fungsi untuk menentukan klasifikasi berdasarkan score
-  const getClassification = (score) => {
+  const classifyScore = (score) => {
     if (score >= 91 && score <= 100) return "Very Good";
     if (score >= 74 && score <= 90) return "Good";
     if (score >= 61 && score <= 74) return "Fair";
     if (score >= 51 && score <= 60) return "Less";
     if (score < 51) return "Poor";
-    return "-"; // Jika ada nilai yang tidak valid
+    return "-";
   };
 
-  const rowsCombined = rowsRight.map((row, index) => {
-    const postTestScore = rowsRight[index]?.score || 0;
+  const processedRows = rowsRight.map((row, index) => {
+    const preTestScore = row.score !== undefined ? row.score : 0;
     return {
-      id: row.id,
-      sample: row.sample,
-      postTest: parseInt(postTestScore),
-      classification: getClassification(parseInt(postTestScore)), // Tambahkan klasifikasi
+      id: row.id || index + 1, // Gunakan index jika id tidak tersedia
+      sample: row.sample || "N/A", // Default jika sample kosong
+      preTest: parseInt(preTestScore, 10),
+      classification: classifyScore(parseInt(preTestScore, 10)),
     };
   });
 
-  // Hitung TOTAL dan AVERAGE
-  const totals = rowsCombined.reduce(
-    (acc, row) => {
-      acc.postTest += row.postTest;
+  const { totalPreTest, averagePreTest } = processedRows.reduce(
+    (acc, row, _, { length }) => {
+      acc.totalPreTest += row.preTest;
+      if (length) acc.averagePreTest = (acc.totalPreTest / length).toFixed(2);
       return acc;
     },
-    { postTest: 0 }
+    { totalPreTest: 0, averagePreTest: 0 }
   );
 
-  const averages = {
-    postTest: (totals.postTest / rowsCombined.length).toFixed(2),
-  };
-
   return (
-    <div className="overflow-x-auto">
-      <Table striped>
+    <div className="overflow-x-auto mb-7">
+      <Table striped className="">
         <Table.Head>
           <Table.HeadCell className="text-center">No</Table.HeadCell>
           <Table.HeadCell className="text-center">Sample</Table.HeadCell>
@@ -50,40 +47,36 @@ const CollactionD = () => {
           </Table.HeadCell>
         </Table.Head>
         <Table.Body className="divide-y">
-          {rowsCombined.map((row) => (
-            <Table.Row key={row.id} className="dark:bg-gray-800">
-              <Table.Cell className="py-1 w-12 border text-center">
+          {processedRows.map((row) => (
+            <Table.Row key={row.id} className="bg-white dark:bg-gray-800">
+              <Table.Cell className="py-1 border text-center">
                 {row.id}
               </Table.Cell>
-              <Table.Cell className="py-1 w-44 border text-center">
+              <Table.Cell className="py-1 border text-center">
                 {row.sample}
               </Table.Cell>
-              <Table.Cell className="py-1 w-16 border text-center">
-                {row.postTest}
+              <Table.Cell className="py-1 border text-center">
+                {row.preTest}
               </Table.Cell>
-              <Table.Cell className="py-1 w-40 border text-center">
+              <Table.Cell className="py-1 border text-center">
                 {row.classification}
               </Table.Cell>
             </Table.Row>
           ))}
-
-          {/* Baris TOTAL */}
           <Table.Row className="bg-gray-100 dark:bg-gray-700 font-bold">
             <Table.Cell colSpan={2} className="py-2 border text-center">
               Score Total
             </Table.Cell>
             <Table.Cell colSpan={2} className="py-2 border text-center">
-              {totals.postTest}
+              {totalPreTest}
             </Table.Cell>
           </Table.Row>
-
-          {/* Baris AVERAGE */}
           <Table.Row className="bg-gray-200 dark:bg-gray-800 font-bold">
             <Table.Cell colSpan={2} className="py-2 border text-center">
               Score Average
             </Table.Cell>
             <Table.Cell colSpan={2} className="py-2 border text-center">
-              {averages.postTest}
+              {averagePreTest}
             </Table.Cell>
           </Table.Row>
         </Table.Body>
@@ -92,4 +85,4 @@ const CollactionD = () => {
   );
 };
 
-export default CollactionD;
+export default ClassificationTable;
