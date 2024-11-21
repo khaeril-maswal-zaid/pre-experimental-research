@@ -3,8 +3,8 @@ import { MathJax, MathJaxContext } from "better-react-mathjax";
 import { useData } from "../context/DataContext";
 
 const MeanScoreBox = ({ title, formula, proces, result }) => (
-  <div className="border p-4 rounded-lg shadow bg-slate-50 w-56">
-    <h2 className="mb-2">{title}</h2>
+  <div className="border px-4 py-7 rounded-lg shadow bg-slate-50 w-56">
+    <h2 className="mb-2">{title}:</h2>
     <MathJax className="pl-10">{formula}</MathJax>
     <MathJax className="pl-10">{proces}</MathJax>
     <MathJax className="pl-10">{result}</MathJax>
@@ -17,7 +17,7 @@ const MeanScorePreComp = () => {
   const validRowsRight = Array.isArray(data.rowsRight) ? data.rowsRight : [];
   const totalSamples = validRowsLeft.length;
 
-  const totalScore = validRowsLeft.reduce(
+  const totalScorePre = validRowsLeft.reduce(
     (sum, row) => sum + (parseInt(row.score, 10) || 0),
     0
   );
@@ -26,9 +26,10 @@ const MeanScorePreComp = () => {
     0
   );
 
-  const meanPreTest = totalSamples > 0 ? totalScore / totalSamples : 0;
+  const meanPreTest = totalSamples > 0 ? totalScorePre / totalSamples : 0;
   const meanPostTest = totalSamples > 0 ? totalScorePost / totalSamples : 0;
-  const meanGain = totalSamples > 0 ? (totalScorePost - totalScore) / totalSamples : 0;
+  const meanGain =
+    totalSamples > 0 ? (totalScorePost - totalScorePre) / totalSamples : 0;
 
   return (
     <MathJaxContext>
@@ -42,9 +43,15 @@ const MeanScorePreComp = () => {
             formula={`\\[
               \\bar{X_1}= \\frac{\\sum X_1 }{N}
               \\]`}
-            proces={`\\[
-              \\bar{X_1}= \\frac{`+totalScore+` }{`+totalSamples+`}
-              \\]`}
+            proces={
+              `\\[
+              \\bar{X_1}= \\frac{` +
+              totalScorePre +
+              ` }{` +
+              totalSamples +
+              `}
+              \\]`
+            }
             result={`\\[
               \\bar{X_1}= ${meanPreTest.toFixed(2)}
               \\]`}
@@ -54,9 +61,15 @@ const MeanScorePreComp = () => {
             formula={`\\[
               \\bar{X_2}= \\frac{\\sum X_2 }{N}
               \\]`}
-              proces={`\\[
-                \\bar{X_2}= \\frac{`+totalScorePost+` }{`+totalSamples+`}
-                \\]`}
+            proces={
+              `\\[
+                \\bar{X_2}= \\frac{` +
+              totalScorePost +
+              ` }{` +
+              totalSamples +
+              `}
+                \\]`
+            }
             result={`\\[
               \\bar{X_2}= ${meanPostTest.toFixed(2)}
               \\]`}
@@ -66,9 +79,15 @@ const MeanScorePreComp = () => {
             formula={`\\[
               \\bar{D}= \\frac{\\sum D }{N}
               \\]`}
-              proces={`\\[
-                \\bar{X}= \\frac{`+(totalScorePost - totalScore)+` }{`+totalSamples+`}
-                \\]`}
+            proces={
+              `\\[
+                \\bar{X}= \\frac{` +
+              (totalScorePost - totalScorePre) +
+              ` }{` +
+              totalSamples +
+              `}
+                \\]`
+            }
             result={`\\[
               \\bar{D}= ${meanGain.toFixed(2)}
               \\]`}

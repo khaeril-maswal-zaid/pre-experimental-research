@@ -53,10 +53,10 @@ const CollactionD = () => {
             Score of Post Test (X<sub>2</sub>)
           </Table.HeadCell>
           <Table.HeadCell>
-            D = (X<sub>1</sub> - X<sub>2</sub>)
+            D = (X<sub>2</sub> - X<sub>1</sub>)
           </Table.HeadCell>
           <Table.HeadCell>
-            D<sup>2</sup> = (X<sub>1</sub> - X<sub>2</sub>)<sup>2</sup>
+            D<sup>2</sup> = (X<sub>2</sub> - X<sub>1</sub>)<sup>2</sup>
           </Table.HeadCell>
         </Table.Head>
         <Table.Body className="divide-y">
