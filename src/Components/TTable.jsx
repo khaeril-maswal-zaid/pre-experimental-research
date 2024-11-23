@@ -75,6 +75,84 @@ const StandardDeviation = () => {
               `-1)}
               }}
             \\]`}
+
+            {`\\[
+              t = \\frac{` +
+              meanGain +
+              `}{
+              \\sqrt{
+              \\frac{` +
+              totals.D2 +
+              `  - \\frac{` +
+              totals.D ** 2 +
+              `}{` +
+              totalSamples +
+              `}}{` +
+              totalSamples +
+              `(` +
+              totalSamples +
+              `-1)}
+              }}
+            \\]`}
+
+            {`\\[
+              t = \\frac{` +
+              meanGain +
+              `}{
+              \\sqrt{
+              \\frac{` +
+              totals.D2 +
+              `  - ` +
+              (totals.D ** 2 / totalSamples).toFixed(2) +
+              `}{` +
+              totalSamples +
+              `(` +
+              totalSamples +
+              `-1)}
+              }}
+            \\]`}
+
+            {`\\[
+              t = \\frac{` +
+              meanGain +
+              `}{
+              \\sqrt{
+              \\frac{` +
+              (totals.D2 - totals.D ** 2 / totalSamples).toFixed(2) +
+              `}{` +
+              totalSamples +
+              `-` +
+              (totalSamples - 1) +
+              `}
+              }}
+            \\]`}
+
+            {`\\[
+              t = \\frac{` +
+              meanGain +
+              `}{
+              \\sqrt{
+              \\frac{` +
+              (totals.D2 - totals.D ** 2 / totalSamples).toFixed(2) +
+              `}{` +
+              (totalSamples - (totalSamples - 1)) +
+              `}
+              }}
+            \\]`}
+
+            {`\\[
+              t = \\frac{` +
+              meanGain +
+              `}{
+              \\sqrt{
+              ` +
+              (
+                (totals.D2 - totals.D ** 2 / totalSamples) /
+                (totalSamples - (totalSamples - 1))
+              ).toFixed(2) +
+              `
+              }}
+            \\]`}
           </MathJax>
         </div>
       </div>
