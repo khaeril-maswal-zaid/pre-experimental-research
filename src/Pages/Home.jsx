@@ -16,6 +16,11 @@ const Home = () => {
   //Menentukan jumlah baris sample
   const handleGetStarted = () => {
     const rowsCount = parseInt(document.getElementById("rowInput").value, 10);
+    if (rowsCount > 50) {
+      alert("Max 50 rows");
+      return false;
+    }
+
     if (!isNaN(rowsCount) && rowsCount > 0) {
       setNumRows(rowsCount);
       const newRowsLeft = Array.from({ length: rowsCount }, (_, index) => ({
