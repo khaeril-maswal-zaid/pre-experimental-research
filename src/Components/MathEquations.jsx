@@ -1,9 +1,13 @@
 import React from "react";
-import { MathJax, MathJaxContext } from "better-react-mathjax";
-import { useData } from "../context/DataContext";
+import GoogleAuth from "./GoogleAuth";
 
-const TTestComponent = () => {
-  return <></>;
-};
+function App() {
+  return (
+    <div>
+      <h1>Google Analytics Data API</h1>
+      <GoogleAuth />
+    </div>
+  );
+}
 
-export default TTestComponent;
+export default App;
