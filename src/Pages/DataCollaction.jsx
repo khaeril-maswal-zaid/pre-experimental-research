@@ -28,7 +28,7 @@ const DataCollaction = () => {
           variant="underline"
           className="container mx-auto items-center justify-center bg-gradient-to-r to-emerald-50 from-sky-100 rounded-md my-3"
         >
-          <Tabs.Item active title="Data Collaction" icon={HiUserCircle}>
+          <Tabs.Item active title="Stand. Classification" icon={HiUserCircle}>
             <MathEquations />
           </Tabs.Item>
 
