@@ -11,7 +11,7 @@ import {
 const NavbarComp = () => {
   return (
     <Navbar fluid rounded className="container mx-auto mt-3">
-      <NavbarBrand href="/">
+      <NavbarBrand href="/pre-experimental-research/">
         <img
           src="https://flowbite.com/docs/images/logo.svg"
           className="h-8"
