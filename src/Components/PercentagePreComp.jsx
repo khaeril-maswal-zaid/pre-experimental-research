@@ -41,7 +41,7 @@ const PercentagePreComp = () => {
   return (
     <MathJaxContext>
       <div className="container mx-auto">
-        <h1 className="text-lg font-bold text-center mb-4">
+        <h1 className="text-lg font-bold text-center mb-4 mx-4">
           Calculating the Percentage Rate of Students' Pre-Test Scores
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-5 gap-4 mb-4">

@@ -41,88 +41,90 @@ const CollactionD = () => {
   };
 
   return (
-    <div className="overflow-x-auto">
-      <Table striped>
-        <Table.Head>
-          <Table.HeadCell>No</Table.HeadCell>
-          <Table.HeadCell>Sample</Table.HeadCell>
-          <Table.HeadCell>
-            Score of Pre Test (X<sub>1</sub>)
-          </Table.HeadCell>
-          <Table.HeadCell>
-            Score of Post Test (X<sub>2</sub>)
-          </Table.HeadCell>
-          <Table.HeadCell>
-            D = (X<sub>2</sub> - X<sub>1</sub>)
-          </Table.HeadCell>
-          <Table.HeadCell>
-            D<sup>2</sup> = (X<sub>2</sub> - X<sub>1</sub>)<sup>2</sup>
-          </Table.HeadCell>
-        </Table.Head>
-        <Table.Body className="divide-y">
-          {rowsCombined.map((row) => (
-            <Table.Row key={row.id} className="bg-white dark:bg-gray-800">
-              <Table.Cell className="py-1 border text-center">
-                {row.id}
+    <>
+      <div className="w-[450px] overflow-x-auto">
+        <Table striped className="min-w-[800px]">
+          <Table.Head>
+            <Table.HeadCell>No</Table.HeadCell>
+            <Table.HeadCell>Sample</Table.HeadCell>
+            <Table.HeadCell>
+              Score of Pre Test (X<sub>1</sub>)
+            </Table.HeadCell>
+            <Table.HeadCell>
+              Score of Post Test (X<sub>2</sub>)
+            </Table.HeadCell>
+            <Table.HeadCell>
+              D = (X<sub>2</sub> - X<sub>1</sub>)
+            </Table.HeadCell>
+            <Table.HeadCell>
+              D<sup>2</sup> = (X<sub>2</sub> - X<sub>1</sub>)<sup>2</sup>
+            </Table.HeadCell>
+          </Table.Head>
+          <Table.Body className="divide-y">
+            {rowsCombined.map((row) => (
+              <Table.Row key={row.id} className="bg-white dark:bg-gray-800">
+                <Table.Cell className="py-1 border text-center">
+                  {row.id}
+                </Table.Cell>
+                <Table.Cell className="py-1 border text-center">
+                  {row.sample}
+                </Table.Cell>
+                <Table.Cell className="py-1 border text-center">
+                  {row.preTest}
+                </Table.Cell>
+                <Table.Cell className="py-1 border text-center">
+                  {row.postTest}
+                </Table.Cell>
+                <Table.Cell className="py-1 border text-center">
+                  {row.D}
+                </Table.Cell>
+                <Table.Cell className="py-1 border text-center">
+                  {row.D2}
+                </Table.Cell>
+              </Table.Row>
+            ))}
+
+            {/* Baris TOTAL */}
+            <Table.Row className="bg-gray-100 dark:bg-gray-700 font-bold">
+              <Table.Cell className="border py-2 text-center" colSpan={2}>
+                Total
               </Table.Cell>
-              <Table.Cell className="py-1 border text-center">
-                {row.sample}
+              <Table.Cell className="border py-2 text-center">
+                {totals.preTest}
               </Table.Cell>
-              <Table.Cell className="py-1 border text-center">
-                {row.preTest}
+              <Table.Cell className="border py-2 text-center">
+                {totals.postTest}
               </Table.Cell>
-              <Table.Cell className="py-1 border text-center">
-                {row.postTest}
+              <Table.Cell className="border py-2 text-center">
+                {totals.D}
               </Table.Cell>
-              <Table.Cell className="py-1 border text-center">
-                {row.D}
-              </Table.Cell>
-              <Table.Cell className="py-1 border text-center">
-                {row.D2}
+              <Table.Cell className="border py-2 text-center">
+                {totals.D2}
               </Table.Cell>
             </Table.Row>
-          ))}
 
-          {/* Baris TOTAL */}
-          <Table.Row className="bg-gray-100 dark:bg-gray-700 font-bold">
-            <Table.Cell className="border py-2 text-center" colSpan={2}>
-              Total
-            </Table.Cell>
-            <Table.Cell className="border py-2 text-center">
-              {totals.preTest}
-            </Table.Cell>
-            <Table.Cell className="border py-2 text-center">
-              {totals.postTest}
-            </Table.Cell>
-            <Table.Cell className="border py-2 text-center">
-              {totals.D}
-            </Table.Cell>
-            <Table.Cell className="border py-2 text-center">
-              {totals.D2}
-            </Table.Cell>
-          </Table.Row>
-
-          {/* Baris AVERAGE */}
-          <Table.Row className="bg-gray-200 dark:bg-gray-800 font-bold">
-            <Table.Cell className="border py-2 text-center" colSpan={2}>
-              Average
-            </Table.Cell>
-            <Table.Cell className="border py-2 text-center">
-              {averages.preTest}
-            </Table.Cell>
-            <Table.Cell className="border py-2 text-center">
-              {averages.postTest}
-            </Table.Cell>
-            <Table.Cell className="border py-2 text-center">
-              {averages.D}
-            </Table.Cell>
-            <Table.Cell className="border py-2 text-center">
-              {averages.D2}
-            </Table.Cell>
-          </Table.Row>
-        </Table.Body>
-      </Table>
-    </div>
+            {/* Baris AVERAGE */}
+            <Table.Row className="bg-gray-200 dark:bg-gray-800 font-bold">
+              <Table.Cell className="border py-2 text-center" colSpan={2}>
+                Average
+              </Table.Cell>
+              <Table.Cell className="border py-2 text-center">
+                {averages.preTest}
+              </Table.Cell>
+              <Table.Cell className="border py-2 text-center">
+                {averages.postTest}
+              </Table.Cell>
+              <Table.Cell className="border py-2 text-center">
+                {averages.D}
+              </Table.Cell>
+              <Table.Cell className="border py-2 text-center">
+                {averages.D2}
+              </Table.Cell>
+            </Table.Row>
+          </Table.Body>
+        </Table>
+      </div>
+    </>
   );
 };
 

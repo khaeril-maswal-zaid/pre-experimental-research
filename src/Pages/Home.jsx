@@ -122,11 +122,11 @@ const Home = () => {
                 <th scope="col" className="px-6 py-3">
                   No
                 </th>
-                <th scope="col" className="px-6 py-3">
+                <th scope="col" className="px-6 py-3 w-28">
                   Samples
                 </th>
-                <th scope="col" className="px-6 py-3">
-                  Score Pre-Test
+                <th scope="col" className="px-6 py-3 text-center">
+                  Score Pre-Test (X1)
                 </th>
               </tr>
             </thead>
@@ -140,7 +140,7 @@ const Home = () => {
                     {row.id}
                   </th>
                   <td className="px-6 py-0">{row.sample}</td>
-                  <td className="px-6 py-0">
+                  <td className="px-6 py-0 ">
                     <input
                       type="text"
                       value={row.score}
@@ -165,11 +165,11 @@ const Home = () => {
                 <th scope="col" className="px-6 py-3">
                   No
                 </th>
-                <th scope="col" className="px-6 py-3">
+                <th scope="col" className="px-6 py-3 w-28">
                   Samples
                 </th>
-                <th scope="col" className="px-6 py-3">
-                  Score of Post Test
+                <th scope="col" className="px-6 py-3 text-center">
+                  Score of Post Test (X2)
                 </th>
               </tr>
             </thead>
