@@ -142,7 +142,7 @@ const Home = () => {
                   <td className="px-6 py-0">{row.sample}</td>
                   <td className="px-6 py-0 ">
                     <input
-                      type="text"
+                      type="number"
                       value={row.score}
                       onChange={(e) => {
                         const newRows = [...rowsLeft];
@@ -185,7 +185,7 @@ const Home = () => {
                   <td className="px-6 py-0">{row.sample}</td>
                   <td className="px-6 py-0">
                     <input
-                      type="text"
+                      type="number"
                       value={row.score}
                       onChange={(e) => {
                         const newRows = [...rowsRight];
