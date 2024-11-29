@@ -42,7 +42,7 @@ const CollactionD = () => {
 
   return (
     <>
-      <div className="w-[450px] overflow-x-auto">
+      <div className="w-[400px] overflow-x-auto mb-7">
         <Table striped className="min-w-[800px]">
           <Table.Head>
             <Table.HeadCell>No</Table.HeadCell>

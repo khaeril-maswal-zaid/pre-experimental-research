@@ -72,7 +72,7 @@ const PercentagePreComp = () => {
                 {`\\[
                   \\text{P} = ${((category.value / totalSamples) * 100).toFixed(
                     2
-                  )}
+                  )} \\%
                 \\]`}
               </MathJax>
             </div>
