@@ -74,12 +74,14 @@ const Home = () => {
             &nbsp;Research
           </h1>
           <p className="text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400 mb-5">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus,
-            eligendi saepe dolor excepturi harum molestias! Dolorum repudiandae
-            officiis vero laboriosam neque maxime ex labore doloremque
-            laudantium veniam, suscipit delectus quo.
+            "Platform designed to simplify research tasks for students. This
+            application enables you to automatically calculate data corrections
+            simply by entering pre-test (X1) and post-test (X2) values. With a
+            simple yet accurate feature set, we are here to help you save time
+            and effort, allowing you to focus more on your research and the
+            writing of your scientific papers."
           </p>
-          <div className="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0">
+          <div className="flex flex-row justify-center space-y-0">
             <input
               id="rowInput"
               type="number"
@@ -88,9 +90,9 @@ const Home = () => {
             />
             <button
               onClick={handleGetStarted}
-              className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900"
+              className="max-w- inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900"
             >
-              Get started
+              Generate Samples
               <svg
                 className="w-3.5 h-3.5 ms-2 rtl:rotate-180"
                 aria-hidden="true"
@@ -112,7 +114,7 @@ const Home = () => {
       </section>
 
       <section className="relative container mx-auto overflow-x-auto shadow-md mb-9 sm:rounded-lg">
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {/* Tabel Kiri */}
           <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
             <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">

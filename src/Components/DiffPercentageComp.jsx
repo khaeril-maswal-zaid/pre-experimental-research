@@ -32,7 +32,7 @@ const DiffPercentageComp = () => {
           Calculating the Diffrent of Percentage
         </h1>
 
-        <div className="border p-4 rounded-lg shadow bg-slate-50 w-64">
+        <div className="border p-4 mx-auto rounded-lg shadow bg-slate-50 w-64">
           <MathJax className="px-4">
             {`\\[
               \\text{P} = \\frac{(\\bar{X_2} - \\bar{X_1})}{\\bar{X_1}} \\times 100

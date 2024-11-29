@@ -49,7 +49,7 @@ const PercentagePostComp = () => {
           {categories.map((category) => (
             <div
               key={category.label}
-              className="border p-4 rounded-lg shadow bg-slate-50 w-56"
+              className="border p-4 rounded-lg shadow mx-auto bg-slate-50 w-56"
             >
               <h2 className="text-xl font-semibold mb-2">{category.label}:</h2>
               <MathJax className="pl-10">

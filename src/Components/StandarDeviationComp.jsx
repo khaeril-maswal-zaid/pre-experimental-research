@@ -19,7 +19,7 @@ const StdDeviationMathJax = ({
   const stdDeviation = Math.sqrt(variance);
 
   return (
-    <div className="border p-4 rounded-lg shadow bg-slate-50 w-72">
+    <div className="border p-4 rounded-lg mx-auto shadow bg-slate-50 w-72">
       <h2 className="mb-2">{title}</h2>
       <MathJax className="pl-5">
         {`\\[
