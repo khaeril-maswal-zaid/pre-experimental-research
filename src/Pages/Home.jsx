@@ -139,7 +139,7 @@ const Home = () => {
                   <th scope="row" className="px-6 py-0">
                     {row.id}
                   </th>
-                  <td className="px-6 py-0">{row.sample}</td>
+                  <td className="px-6 py-0 w-48">{row.sample}</td>
                   <td className="px-6 py-0 ">
                     <input
                       type="number"
@@ -182,7 +182,7 @@ const Home = () => {
                   <th scope="row" className="px-6 py-0">
                     {row.id}
                   </th>
-                  <td className="px-6 py-0">{row.sample}</td>
+                  <td className="px-6 py-0 w-48">{row.sample}</td>
                   <td className="px-6 py-0">
                     <input
                       type="number"

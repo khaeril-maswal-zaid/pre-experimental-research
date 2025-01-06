@@ -14,6 +14,15 @@ const JumbotronComp = () => {
           officiis vero laboriosam neque maxime ex labore doloremque laudantium
           veniam, suscipit delectus quo.
         </p>
+
+        <div className="flex flex-row justify-center space-y-0">
+          <a
+            href="/pre-experimental-research/"
+            className="max-w- inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900"
+          >
+            Home
+          </a>
+        </div>
       </div>
     </section>
   );
